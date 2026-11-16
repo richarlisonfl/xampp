@@ -1,0 +1,70 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Meu XAMPP</title>
+    <link rel="stylesheet" href="css/style.css">
+  </head>
+  <body>
+    <header class="topbar">
+      <div>
+        <p class="eyebrow">AMBIENTE LOCAL</p>
+        <h1>Meu XAMPP</h1>
+      </div>
+      <span id="last-update" class="muted">Verificando...</span>
+    </header>
+    <main class="layout">
+      <section class="hero panel">
+        <div>
+          <p class="eyebrow">STATUS GERAL</p>
+          <h2 id="overall-status">Verificando serviços...</h2>
+          <p id="overall-message" class="muted">Consultando o systemd.</p>
+        </div>
+        <div class="actions">
+          <button data-all-action="start" class="button success">INICIAR TUDO</button>
+          <button data-all-action="stop" class="button danger">PARAR TUDO</button>
+          <button data-all-action="restart" class="button secondary">REINICIAR TUDO</button>
+        </div>
+      </section>
+
+      <section class="service-grid">
+        <article class="panel service-card" data-service="apache">
+          <div class="card-heading"><h3>Apache</h3><span class="status-dot"></span></div>
+          <p class="service-state">Verificando...</p>
+          <p class="muted service-port">Porta 80</p>
+          <div class="card-actions">
+            <button data-action="start" class="button success">Iniciar</button>
+            <button data-action="stop" class="button danger">Parar</button>
+            <button data-action="restart" class="button secondary">Reiniciar</button>
+          </div>
+          <pre class="logs" aria-label="Logs do Apache"></pre>
+        </article>
+        <article class="panel service-card" data-service="mysql">
+          <div class="card-heading"><h3>MariaDB</h3><span class="status-dot"></span></div>
+          <p class="service-state">Verificando...</p>
+          <p class="muted service-port">Porta 3306</p>
+          <div class="card-actions">
+            <button data-action="start" class="button success">Iniciar</button>
+            <button data-action="stop" class="button danger">Parar</button>
+            <button data-action="restart" class="button secondary">Reiniciar</button>
+          </div>
+          <pre class="logs" aria-label="Logs do MariaDB"></pre>
+        </article>
+      </section>
+
+      <section class="panel">
+        <div class="section-heading"><div><p class="eyebrow">PROJETOS LOCAIS</p><h2>MEUS PROJETOS</h2></div><button id="new-project" class="button primary">Novo projeto</button></div>
+        <p id="projects-root" class="muted"></p>
+        <div id="projects" class="projects"></div>
+      </section>
+
+      <section class="panel tools">
+        <div class="section-heading"><div><p class="eyebrow">RECURSOS</p><h2>FERRAMENTAS</h2></div></div>
+        <div id="system-info" class="tool-grid"></div>
+      </section>
+    </main>
+    <div id="toast" class="toast" role="status"></div>
+    <script src="js/app.js"></script>
+  </body>
+</html>

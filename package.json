@@ -1,0 +1,45 @@
+{
+  "name": "xampp",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Gerenciador local de ambiente PHP para Debian",
+  "main": "desktop/main.js",
+  "engines": {
+    "node": ">=20"
+  },
+  "scripts": {
+    "start": "node start.js",
+    "desktop": "electron desktop/main.js",
+    "build:appimage": "electron-builder --linux AppImage",
+    "install-system": "bash install.sh"
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  },
+  "devDependencies": {
+    "electron": "33.4.11",
+    "electron-builder": "^25.1.8"
+  },
+  "build": {
+    "appId": "br.com.meuxampp.desktop",
+    "productName": "Meu XAMPP",
+    "executableName": "meu-xampp",
+    "asar": true,
+    "files": [
+      "backend/**/*",
+      "core/**/*",
+      "desktop/**/*",
+      "frontend/**/*",
+      "start.js",
+      "package.json",
+      "www/**/*"
+    ],
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "category": "Development",
+      "artifactName": "Meu-XAMPP-${version}.${ext}"
+    }
+  }
+}

@@ -1,0 +1,8 @@
+[Desktop Entry]
+Type=Application
+Name=Meu XAMPP
+Comment=Gerenciador local de ambiente PHP
+Exec=/home/user/xampp/node_modules/.bin/electron /home/user/xampp/desktop/main.js
+Terminal=false
+Icon=applications-development
+Categories=Development;
